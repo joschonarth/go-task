@@ -1,1 +1,48 @@
-<p>task-comments-modal works!</p>
+<div class="rounded-xl overflow-scroll bg-white max-h-[500] scrollbar-hidden">
+  <div class="p-4 flex gap-1">
+    <img src="images/icon-task-star.svg" alt="" />
+    <h1 class="font-semibold text-lg">Comentar tarefa</h1>
+    <img src="images/icon-close.svg" alt="" class="ml-auto cursor-pointer" />
+  </div>
+
+  <div class="p-4 border-t border-[#d1d5db]">
+    <h1 class="font-semibold text-lg mb-4">Minha tarefa</h1>
+    <p class="font-semibold text-sm mb-2">Descrição</p>
+    <p class="font-normal text-base text-[#374151]">Descrição da minha tarefa</p>
+  </div>
+
+  <div class="p-4">
+    <div class="bg-[#f3f4f6] p-5 rounded-xl flex flex-col gap-5">
+      <div>
+        <p class="font-bold text-sm">Comentários</p>
+      </div>
+
+      <div class="flex items-start gap-2">
+        <div class="flex flex-col w-full">
+          <input
+            type="text"
+            placeholder="Adicione um comentário"
+            class="rounded-lg border border-[#d1d5db] p-3 bg-white flex-1 text-sm font-light" />
+          <p class="font-semibold text-sm text-red-500">O campo é obrigatório.</p>
+        </div>
+        <button
+          type="button"
+          class="py-3 px-4 bg-[#2a89ef] text-white rounded-xl text-sm font-semibold cursor-pointer active:translate-y-1 transition-transform duration-75 shadow-md shadow-blue-500/50">
+          Adicionar
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-5 overflow-scroll max-h-44 scrollbar-hidden">
+        <div class="flex flex-col gap-3">
+          <div>
+            <p class="font-light text-sm text-[#374151]">Já finalizei!</p>
+          </div>
+          <div class="flex gap-4 mb-3">
+            <p class="font-normal text-sm text-[#9ca3af]">Comentado há 10 min atrás</p>
+            <p class="font-semibold text-xs underline underline-offset-2 cursor-pointer">Apagar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
