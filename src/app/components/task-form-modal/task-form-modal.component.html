@@ -4,7 +4,7 @@
     <h1 class="font-semibold text-lg">
       {{ (_data.mode === 'create' ? 'Criar ' : 'Editar ') + 'tarefa' }}
     </h1>
-    <img src="images/icon-close.svg" alt="" class="ml-auto cursor-pointer" />
+    <img src="images/icon-close.svg" alt="" class="ml-auto cursor-pointer" (click)="closeModal()" />
   </div>
 
   <div class="p-4 border-y border-[#d1d5db] flex flex-col gap-4">
@@ -36,7 +36,8 @@
   <div class="p-4 flex justify-end gap-2">
     <button
       type="button"
-      class="py-3 px-4 bg-[#fafafa] rounded-xl text-sm font-semibold cursor-pointer active:translate-y-1 transition-transform duration-75">
+      class="py-3 px-4 bg-[#fafafa] rounded-xl text-sm font-semibold cursor-pointer active:translate-y-1 transition-transform duration-75"
+      (click)="closeModal()">
       Cancelar
     </button>
     <button
