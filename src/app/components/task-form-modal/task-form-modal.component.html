@@ -15,7 +15,9 @@
         placeholder="Descreva o que deverá ser feito"
         class="w-full border border-[#d1d5db] p-3 rounded-lg text-sm font-light text-[#89919f]"
         formControlName="name" />
-      <p class="font-semibold text-sm text-red-500">O campo é obrigatório e preacisa ter no minímo 10 caracteres.</p>
+      @if (taskForm.get('name')?.touched && taskForm.get('name')?.invalid) {
+        <p class="font-semibold text-sm text-red-500">O campo é obrigatório e preacisa ter no minímo 10 caracteres.</p>
+      }
     </div>
 
     <div>
@@ -25,7 +27,9 @@
         placeholder="Adicione uma descrição"
         class="w-full border border-[#d1d5db] p-3 rounded-lg text-sm font-light text-[#89919f]"
         formControlName="description" />
-      <p class="font-semibold text-sm text-red-500">O campo é obrigatório e preacisa ter no minímo 10 caracteres.</p>
+      @if (taskForm.get('description')?.touched && taskForm.get('description')?.invalid) {
+        <p class="font-semibold text-sm text-red-500">O campo é obrigatório e preacisa ter no minímo 10 caracteres.</p>
+      }
     </div>
   </div>
 
