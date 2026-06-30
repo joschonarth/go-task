@@ -10,25 +10,15 @@ import { generateUniqueIdWithTimestamp } from '../utils/generate-unique-id-with-
 })
 export class TaskService {
   private todoTasks$ = new BehaviorSubject<ITask[]>([]);
-  readonly todoTasks = this.todoTasks$.asObservable().pipe(
-    map((tasks) => {
-      structuredClone(tasks);
-    }),
-  );
+  readonly todoTasks = this.todoTasks$.asObservable().pipe(map((tasks) => structuredClone(tasks)));
 
   private doingTasks$ = new BehaviorSubject<ITask[]>([]);
-  readonly doingTasks = this.doingTasks$.asObservable().pipe(
-    map((tasks) => {
-      structuredClone(tasks);
-    }),
-  );
+  readonly doingTasks = this.doingTasks$
+    .asObservable()
+    .pipe(map((tasks) => structuredClone(tasks)));
 
   private doneTasks$ = new BehaviorSubject<ITask[]>([]);
-  readonly doneTasks = this.doneTasks$.asObservable().pipe(
-    map((tasks) => {
-      structuredClone(tasks);
-    }),
-  );
+  readonly doneTasks = this.doneTasks$.asObservable().pipe(map((tasks) => structuredClone(tasks)));
 
   addTask(taskInfos: ITaskFormControls) {
     const newTask: ITask = {
