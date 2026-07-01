@@ -11,6 +11,8 @@ import {
 } from '@angular/cdk/drag-drop';
 import { ITask } from '../../interfaces/task.interface';
 import { AsyncPipe } from '@angular/common';
+import { TaskStatus } from '../../types/task-status';
+import { TaskStatusEnum } from '../../enums/task-status.enum';
 
 @Component({
   selector: 'app-task-list-section',
@@ -21,7 +23,35 @@ import { AsyncPipe } from '@angular/common';
 export class TaskListSectionComponent {
   readonly _taskService = inject(TaskService);
 
-  drop(event: CdkDragDrop<ITask[]>) {
+  onCardDrop(event: CdkDragDrop<ITask[]>) {
+    this.moveCardToColumn(event);
+
+    const taskId = event.item.data.id;
+    const taskCurrentSatatus = event.item.data.status;
+    const droppedColumn = event.container.id;
+
+    this.updateTaskStatus(taskId, taskCurrentSatatus, droppedColumn);
+  }
+
+  private updateTaskStatus(taskId: string, taskCurrentSatatus: TaskStatus, droppedColumn: string) {
+    let taskNextStatus: TaskStatus;
+
+    switch (droppedColumn) {
+      case 'to-do-column':
+        taskNextStatus = TaskStatusEnum.TODO;
+        break;
+      case 'doing-column':
+        taskNextStatus = TaskStatusEnum.DOING;
+        break;
+      case 'done-column':
+        taskNextStatus = TaskStatusEnum.DONE;
+        break;
+      default:
+        throw new Error('Coluna não identificada');
+    }
+  }
+
+  private moveCardToColumn(event: CdkDragDrop<ITask[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
