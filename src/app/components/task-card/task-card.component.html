@@ -1,14 +1,16 @@
 <div class="p-3 bg-[#fafafa] rounded-xl cursor-grab flex flex-col gap-3">
   <div class="flex gap-1">
-    <p class="font-bold">Minha tarefa</p>
+    <p class="font-bold">{{ task.name }}</p>
     <img src="images/icon-delete.svg" alt="" class="self-start cursor-pointer ml-auto" />
   </div>
 
-  <p class="font-light text-sm">Essa é a minha tarefa</p>
+  <p class="font-light text-sm">{{ task.description }}</p>
 
   <div class="flex items-center gap-1">
     <img src="images/icon-comments.svg" alt="" />
-    <p class="font-semibold text-xs text-[#2a89ef] underline underline-offset-2 cursor-pointer">2 Comentários</p>
+    <p class="font-semibold text-xs text-[#2a89ef] underline underline-offset-2 cursor-pointer">
+      {{ task.comments.length }} Comentários
+    </p>
     <p
       class="font-semibold text-xs text-[#2a89ef] underline underline-offset-2 cursor-pointer ml-auto"
       (click)="openEditTaskModal()">
