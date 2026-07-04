@@ -32,17 +32,19 @@
         </button>
       </div>
 
-      <div class="flex flex-col gap-5 overflow-scroll max-h-44 scrollbar-hidden">
-        <div class="flex flex-col gap-3">
-          <div>
-            <p class="font-light text-sm text-[#374151]">Já finalizei!</p>
-          </div>
-          <div class="flex gap-4 mb-3">
-            <p class="font-normal text-sm text-[#9ca3af]">Comentado há 10 min atrás</p>
-            <p class="font-semibold text-xs underline underline-offset-2 cursor-pointer">Apagar</p>
+      @for (comment of _task.comments; track comment.id; let last = $last) {
+        <div class="flex flex-col gap-5 overflow-scroll max-h-44 scrollbar-hidden">
+          <div class="{{ `flex flex-col gap-3 ${ !last ? 'border-b border-[#D1D5D8]' : ''  } `}}">
+            <div>
+              <p class="font-light text-sm text-[#374151]">{{ comment.description }}</p>
+            </div>
+            <div class="{{ `flex gap-4 ${ !last ? 'mb-3' : '' }` }}">
+              <p class="font-normal text-sm text-[#9ca3af]">Comentado há 10 min atrás</p>
+              <p class="font-semibold text-xs underline underline-offset-2 cursor-pointer">Apagar</p>
+            </div>
           </div>
         </div>
-      </div>
+      }
     </div>
   </div>
 </div>
