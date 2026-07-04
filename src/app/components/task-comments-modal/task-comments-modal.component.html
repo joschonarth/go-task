@@ -22,12 +22,19 @@
           <input
             type="text"
             placeholder="Adicione um comentário"
+            [formControl]="commentControl"
             class="rounded-lg border border-[#d1d5db] p-3 bg-white flex-1 text-sm font-light" />
-          <p class="font-semibold text-sm text-red-500">O campo é obrigatório.</p>
         </div>
         <button
           type="button"
-          class="py-3 px-4 bg-[#2a89ef] text-white rounded-xl text-sm font-semibold cursor-pointer active:translate-y-1 transition-transform duration-75 shadow-md shadow-blue-500/50">
+          class="{{ `py-3 px-4 rounded-xl text-sm font-semibold text-white cursor-pointer
+            ${ commentControl.invalid
+              ? 'bg-[#D7D8D8]'
+              : ' bg-[#2A89EF]  active:translate-y-1 transition-transform duration-75 shadow-md shadow-blue-500/50'
+            }
+          `}}"
+          [disabled]="commentControl.invalid"
+          (click)="onAddComment()">
           Adicionar
         </button>
       </div>
