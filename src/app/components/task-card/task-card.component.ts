@@ -34,11 +34,12 @@ export class TaskCardComponent {
   }
 
   openTaskCommentsModal() {
-    this.task.comments = [
-      { id: '123', description: 'Meu comentario 1' },
-      { id: '456', description: 'Meu comentario 2' },
-    ];
+    const dialogRef = this._modalControllerService.openTaskCommentsModal(this.task);
 
-    this._modalControllerService.openTaskCommentsModal(this.task);
+    dialogRef.closed.subscribe((taskCommentsChanged) => {
+      if (taskCommentsChanged) {
+        this._taskService.updateTaskComments(this.task.id, this.task.status, this.task.comments);
+      }
+    });
   }
 }
