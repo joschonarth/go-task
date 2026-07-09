@@ -21,6 +21,10 @@ _Gerenciador de tarefas com drag-and-drop, comentários e armazenamento local._
 
 ---
 
+<img width="1366" height="741" alt="go-task" src="https://github.com/user-attachments/assets/b42d0280-b66c-4cb4-81c6-a13d2b2b5be3" />
+
+---
+
 ## 📃 Sobre
 
 O **GoTask** é uma aplicação web para gerenciamento de tarefas, desenvolvida com **Angular** e **TypeScript**. O usuário pode criar tarefas e organizá-las em três status — **A fazer**, **Fazendo** e **Concluído** — movendo-as entre as colunas através de **drag-and-drop**. Cada tarefa também permite a adição de comentários, e todos os dados são armazenados no **localStorage** do navegador, dispensando a necessidade de um backend.
