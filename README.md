@@ -38,8 +38,9 @@ O **GoTask** é uma aplicação web para gerenciamento de tarefas, desenvolvida 
 - 🧩 **[Angular Material](https://material.angular.io/)** — Biblioteca de componentes de UI.
 - 🎨 **[TailwindCSS](https://tailwindcss.com/)** — Framework CSS utility-first para estilização e responsividade.
 - 🔄 **[RxJS](https://rxjs.dev/)** — Programação reativa com observables para gerenciamento de estado e eventos.
-- 💾 **LocalStorage API** — Persistência dos dados diretamente no navegador.
 - 🔍 **[ESLint](https://eslint.org/)** — Linting e padronização de código.
+- 💾 **LocalStorage API** — Persistência dos dados diretamente no navegador.
+- 🏗️ **Feature-Based Architecture** — Organização do projeto por domínio para facilitar manutenção e escalabilidade.
 
 ---
 
