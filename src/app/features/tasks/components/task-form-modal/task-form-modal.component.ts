@@ -1,8 +1,8 @@
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
 import { Component, inject } from '@angular/core';
-import { ITaskFormModalData } from '../../interfaces/task-form-modal-data.interface';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ITaskFormControls } from '../../interfaces/task-form-controls.interface';
+import { ITaskFormModalData } from '../../../../core/interfaces/task-form-modal-data.interface';
+import { ITaskFormControls } from '../../../../core/interfaces/task-form-controls.interface';
 
 @Component({
   selector: 'app-task-form-modal',

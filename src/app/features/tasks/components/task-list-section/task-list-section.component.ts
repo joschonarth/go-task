@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { TaskCardComponent } from '../task-card/task-card.component';
-import { TaskService } from '../../services/task.service';
 
 import {
   CdkDrag,
@@ -9,14 +8,15 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
-import { ITask } from '../../interfaces/task.interface';
 import { AsyncPipe, JsonPipe } from '@angular/common';
-import { TaskStatus } from '../../types/task-status';
-import { TaskStatusEnum } from '../../enums/task-status.enum';
+import { TaskService } from '../../../../core/services/task.service';
+import { TaskStatusEnum } from '../../../../domain/tasks/enums/task-status.enum';
+import { ITask } from '../../../../domain/tasks/interfaces/task.interface';
+import { TaskStatus } from '../../../../domain/tasks/types/task-status';
 
 @Component({
   selector: 'app-task-list-section',
-  imports: [TaskCardComponent, CdkDropList, CdkDrag, AsyncPipe, JsonPipe],
+  imports: [TaskCardComponent, CdkDropList, CdkDrag, AsyncPipe],
   templateUrl: './task-list-section.component.html',
   styleUrl: './task-list-section.component.css',
 })
