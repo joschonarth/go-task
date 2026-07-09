@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { ModalControllerService } from '../../services/modal-controller.service';
-import { TaskService } from '../../services/task.service';
+import { ModalControllerService } from '@core/services/modal-controller.service';
+import { TaskService } from '@core/services/task.service';
 
 @Component({
   selector: 'app-welcome-section',
