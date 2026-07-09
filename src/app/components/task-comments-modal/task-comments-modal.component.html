@@ -6,9 +6,9 @@
   </div>
 
   <div class="p-4 border-t border-[#d1d5db]">
-    <h1 class="font-semibold text-lg mb-4">Minha tarefa</h1>
+    <h1 class="font-semibold text-lg mb-4">{{ _task.name }}</h1>
     <p class="font-semibold text-sm mb-2">Descrição</p>
-    <p class="font-normal text-base text-[#374151]">Descrição da minha tarefa</p>
+    <p class="font-normal text-base text-[#374151]">{{ _task.description }}</p>
   </div>
 
   <div class="p-4">
@@ -48,7 +48,11 @@
             </div>
             <div class="{{ `flex gap-4 ${ !last ? 'mb-3' : '' }` }}">
               <p class="font-normal text-sm text-[#9ca3af]">Comentado há 10 min atrás</p>
-              <p class="font-semibold text-xs underline underline-offset-2 cursor-pointer">Apagar</p>
+              <p
+                class="font-semibold text-xs underline underline-offset-2 cursor-pointer"
+                (click)="onRemoveModal(comment.id)">
+                Apagar
+              </p>
             </div>
           </div>
         </div>
